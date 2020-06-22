@@ -4,9 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BCDemo.Views.Chapter1"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <xctk:MultiLineTextEditor x:Name="multiLineTextBlock" Height="100" Margin="20" DropDownHeight="50" IsOpen="False"></xctk:MultiLineTextEditor>
+        <TextBlock Text="{Binding ElementName=multiLineTextBlock,Path=Text}"></TextBlock>
     </Grid>
 </UserControl>

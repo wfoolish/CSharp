@@ -51,13 +51,14 @@
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
                                                     <Setter Property="Background" Value="Red"></Setter>
-                                                    <Setter Property="FontSize" Value="16"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TreeView.Resources>
                                     <TreeViewItem Header="XCeed">
-                                        <Button Command="{Binding ByteUpDown}">ByteUpDown</Button>
+                                        <Button Command="{Binding ByteUpDownCommand}">ByteUpDown</Button>
+                                        <Button Command="{Binding MultiLineTextEditorCommand}">MultiLineTextEditor</Button>
+                                        <Button Command="{Binding WindowContainerCommand}">WindowContainer</Button>
                                     </TreeViewItem>
                                 </TreeView>
                             </xcad:LayoutAnchorable>

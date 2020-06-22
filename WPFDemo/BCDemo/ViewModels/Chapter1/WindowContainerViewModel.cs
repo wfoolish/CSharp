@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace BCDemo.ViewModels.Chapter1
 {
-    [Export(typeof(IMultiLineTextEditorViewModel))]
-    public class MultiLineTextEditorViewModel : ViewModelBase<IMultiLineTextEditorView>, IMultiLineTextEditorViewModel
+    [Export(typeof(IWindowContainerViewModel))]
+    public class WindowContainerViewModel : ViewModelBase<IWindowContainerView>, IWindowContainerViewModel
     {
-        public MultiLineTextEditorViewModel(IMultiLineTextEditorView view) : base(view)
+        public WindowContainerViewModel(IWindowContainerView view) : base(view)
         {
         }
     }

@@ -21,12 +21,25 @@ namespace BCDemo.ViewModels
     {
         public string Name { get; set; }
 
-        public MainWindowViewModel(IByteUpDownViewModel byteUpDownViewModel, IMainWindowView view) : base(view)
+        public MainWindowViewModel(IByteUpDownViewModel byteUpDownViewModel, IMainWindowView view,
+            IMultiLineTextEditorViewModel multiLineTextEditorViewMoel,
+            IWindowContainerViewModel windowContainerViewModel) : base(view)
         {
-            ByteUpDown = new ActionCommand((obj) => { return true; }, null,
+            ByteUpDownCommand = new ActionCommand((obj) => { return true; }, null,
                 (obj) =>
                 {
                     ContentView = ((ViewModelBase<IByteUpDownView>)byteUpDownViewModel).View;
+                });
+
+            MultiLineTextEditorCommand = new ActionCommand((obj) => { return true; }, null,
+                (obj) =>
+                {
+                    ContentView = ((ViewModelBase<IMultiLineTextEditorView>)multiLineTextEditorViewMoel).View;
+                });
+            WindowContainerCommand = new ActionCommand((obj) => { return true; }, null,
+                (obj) =>
+                {
+                    ContentView = ((ViewModelBase<IWindowContainerView>)windowContainerViewModel).View;
                 });
         }
 
@@ -40,7 +53,11 @@ namespace BCDemo.ViewModels
             }
         }
 
-        public ActionCommand ByteUpDown { get; set; }
+        #region 页面功能菜单的Command
+        public ActionCommand ByteUpDownCommand { get; set; }
+        public ActionCommand MultiLineTextEditorCommand { get; set; }
+        public ActionCommand WindowContainerCommand { get; set; }
+        #endregion
 
         #region var
         private IView _contentView;

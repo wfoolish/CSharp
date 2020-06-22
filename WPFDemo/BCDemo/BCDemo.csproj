@@ -112,17 +112,24 @@
     <Compile Include="IViewModels\IByteUpDownViewModel.cs" />
     <Compile Include="IViewModels\IMainWindowViewModel.cs" />
     <Compile Include="IViewModels\IMultiLineTextEditorViewModel.cs" />
+    <Compile Include="IViewModels\IWindowContainerViewModel.cs" />
     <Compile Include="IViews\IByteUpDownView.cs" />
     <Compile Include="IViews\IMainWindowView.cs" />
     <Compile Include="IViews\IMultiLineTextEditorView.cs" />
+    <Compile Include="IViews\IWindowContainerView.cs" />
+    <Compile Include="Moudles\FirstMoudle.cs" />
     <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\MultiLineTextEditorViewModel.cs" />
+    <Compile Include="ViewModels\Chapter1\WindowContainerViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Chapter1\ByteUpDownView.xaml.cs">
       <DependentUpon>ByteUpDownView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Chapter1\MultiLineTextEditorView.xaml.cs">
       <DependentUpon>MultiLineTextEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Chapter1\WindowContainerView.xaml.cs">
+      <DependentUpon>WindowContainerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
@@ -162,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Chapter1\MultiLineTextEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Chapter1\WindowContainerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

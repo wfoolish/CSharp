@@ -1,11 +1,13 @@
 ﻿using BCDemo.Base;
 using BCDemo.IViewModels;
 using BCDemo.IViews;
+using BCDemo.Moudles;
 using BCDemo.ViewModels;
 using BCDemo.ViewModels.Chapter1;
 using BCDemo.Views;
 using BCDemo.Views.Chapter1;
 using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
@@ -76,6 +78,12 @@ namespace BCDemo
                     }
                 }
             }
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            base.ConfigureModuleCatalog(moduleCatalog);
+            moduleCatalog.AddModule<FirstMoudle>(InitializationMode.WhenAvailable);
         }
     }
 }
