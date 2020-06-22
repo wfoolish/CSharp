@@ -6,6 +6,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ using Unity;
 
 namespace BCDemo.ViewModels
 {
+    [Export(typeof(IMainWindowViewModel))]
     public class MainWindowViewModel : ViewModelBase<IMainWindowView>, IMainWindowViewModel
     {
         public string Name { get; set; }

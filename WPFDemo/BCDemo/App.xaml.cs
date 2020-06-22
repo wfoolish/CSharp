@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using Unity;
@@ -32,16 +33,49 @@ namespace BCDemo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IUnityContainer,UnityContainer>();
+            containerRegistry.RegisterSingleton<IUnityContainer, UnityContainer>();
 
-            containerRegistry.Register<IMainWindowView, MainWindowView>();
-            containerRegistry.Register<IMainWindowViewModel, MainWindowViewModel>();
+            //改成自动注册(利用export属性)
+            //containerRegistry.Register<IMainWindowView, MainWindowView>();
+            //containerRegistry.Register<IMainWindowViewModel, MainWindowViewModel>();
 
-            containerRegistry.Register<IContentOne, ContentOne>();
-            containerRegistry.Register<IContentOneViewModel, ContentOneViewModel>();
+            //containerRegistry.Register<IByteUpDownView, ByteUpDownView>();
+            //containerRegistry.Register<IByteUpDownViewModel, ByteUpDownViewModel>();
 
-            containerRegistry.Register<IByteUpDownView, ByteUpDownView>();
-            containerRegistry.Register<IByteUpDownViewModel, ByteUpDownViewModel>();
+            InjectAuto(containerRegistry);
+        }
+
+
+        /// <summary>
+        /// 自动扫描注册
+        /// </summary>
+        /// <param name="containerRegistry"></param>
+        void InjectAuto(IContainerRegistry containerRegistry)
+        {
+            Assembly assembly = Assembly.GetCallingAssembly();
+            Type[] current = assembly.GetExportedTypes();
+            foreach (var name in current)
+            {
+                System.ComponentModel.Composition.ExportAttribute attr = (System.ComponentModel.Composition.ExportAttribute)name.GetCustomAttribute(typeof(System.ComponentModel.Composition.ExportAttribute), false);
+                if (attr != null && attr.ContractType != null)
+                {
+                    containerRegistry.Register(attr.ContractType, name);
+                }
+            }
+            AssemblyName[] names = assembly.GetReferencedAssemblies();
+            foreach (var name in names)
+            {
+                Assembly assembly1 = Assembly.Load(name);
+                Type[] types = assembly1.GetExportedTypes();
+                foreach (var type in types)
+                {
+                    System.ComponentModel.Composition.ExportAttribute attr = (System.ComponentModel.Composition.ExportAttribute)type.GetCustomAttribute(typeof(System.ComponentModel.Composition.ExportAttribute), false);
+                    if (attr != null && attr.ContractType != null)
+                    {
+                        containerRegistry.Register(attr.ContractType, type);
+                    }
+                }
+            }
         }
     }
 }

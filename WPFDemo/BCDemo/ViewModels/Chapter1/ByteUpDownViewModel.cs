@@ -4,6 +4,7 @@ using BCDemo.IViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using Unity;
 
 namespace BCDemo.ViewModels.Chapter1
 {
+    [Export(typeof(IByteUpDownViewModel))]
     public class ByteUpDownViewModel : ViewModelBase<IByteUpDownView>, IByteUpDownViewModel
     {
         public ByteUpDownViewModel(IByteUpDownView view) : base(view)

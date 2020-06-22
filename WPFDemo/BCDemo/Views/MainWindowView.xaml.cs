@@ -2,6 +2,7 @@
 using BCDemo.IViews;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace BCDemo.Views
 {
+    [Export(typeof(IMainWindowView))]
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>

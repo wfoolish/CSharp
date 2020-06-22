@@ -8,6 +8,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <xctk:ByteUpDown Watermark="Enter Integer" Value="{Binding Day}"></xctk:ByteUpDown>
+        <xctk:ByteUpDown x:Name="byteUpDown" Watermark="Enter Integer" Value="{Binding Day}" MaxWidth="500" MinWidth="200" HorizontalAlignment="Center"></xctk:ByteUpDown>
+
+        <TextBlock HorizontalAlignment="Center">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}输入的数字：{0}">
+                    <Binding ElementName="byteUpDown" Path="Value"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
     </StackPanel>
 </UserControl>

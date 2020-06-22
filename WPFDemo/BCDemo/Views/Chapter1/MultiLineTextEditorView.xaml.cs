@@ -1,6 +1,7 @@
 ﻿using BCDemo.IViews;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,13 @@ using System.Windows.Shapes;
 
 namespace BCDemo.Views.Chapter1
 {
+    [Export(typeof(IMultiLineTextEditorView))]
     /// <summary>
-    /// ContentOne.xaml 的交互逻辑
+    /// MultiLineTextEditorView.xaml 的交互逻辑
     /// </summary>
-    public partial class ContentOne : UserControl, IContentOne
+    public partial class MultiLineTextEditorView : UserControl, IMultiLineTextEditorView
     {
-        public ContentOne()
+        public MultiLineTextEditorView()
         {
             InitializeComponent();
         }

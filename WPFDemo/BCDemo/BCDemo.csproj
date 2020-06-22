@@ -48,6 +48,7 @@
       <HintPath>..\packages\Prism.Wpf.7.2.0.1422\lib\net45\Prism.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -109,19 +110,19 @@
     <Compile Include="Base\IView.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="IViewModels\IByteUpDownViewModel.cs" />
-    <Compile Include="IViewModels\IContentOneViewModel.cs" />
     <Compile Include="IViewModels\IMainWindowViewModel.cs" />
+    <Compile Include="IViewModels\IMultiLineTextEditorViewModel.cs" />
     <Compile Include="IViews\IByteUpDownView.cs" />
-    <Compile Include="IViews\IContentOne.cs" />
     <Compile Include="IViews\IMainWindowView.cs" />
+    <Compile Include="IViews\IMultiLineTextEditorView.cs" />
     <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
-    <Compile Include="ViewModels\Chapter1\ContentOneViewModel.cs" />
+    <Compile Include="ViewModels\Chapter1\MultiLineTextEditorViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Chapter1\ByteUpDownView.xaml.cs">
       <DependentUpon>ByteUpDownView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Chapter1\ContentOne.xaml.cs">
-      <DependentUpon>ContentOne.xaml</DependentUpon>
+    <Compile Include="Views\Chapter1\MultiLineTextEditorView.xaml.cs">
+      <DependentUpon>MultiLineTextEditorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
@@ -160,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Chapter1\ContentOne.xaml">
+    <Page Include="Views\Chapter1\MultiLineTextEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

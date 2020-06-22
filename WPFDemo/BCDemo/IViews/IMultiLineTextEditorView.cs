@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BCDemo.IViews
 {
-    public interface IContentOne : IView
+    public interface IMultiLineTextEditorView : IView
     {
     }
 }
