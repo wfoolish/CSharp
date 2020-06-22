@@ -108,15 +108,23 @@
     <Compile Include="Base\ActionCommand.cs" />
     <Compile Include="Base\IView.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="IViewModels\IByteUpDownViewModel.cs" />
     <Compile Include="IViewModels\IContentOneViewModel.cs" />
+    <Compile Include="IViewModels\IMainWindowViewModel.cs" />
+    <Compile Include="IViews\IByteUpDownView.cs" />
     <Compile Include="IViews\IContentOne.cs" />
+    <Compile Include="IViews\IMainWindowView.cs" />
+    <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\ContentOneViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Chapter1\ByteUpDownView.xaml.cs">
+      <DependentUpon>ByteUpDownView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Chapter1\ContentOne.xaml.cs">
       <DependentUpon>ContentOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -148,11 +156,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\Chapter1\ByteUpDownView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Chapter1\ContentOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

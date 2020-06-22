@@ -9,11 +9,14 @@ namespace BCDemo.Base
 {
     public abstract class ViewModelBase<T> : BindableBase where T : IView
     {
-        private IView _view;
         public ViewModelBase(IView view)
         {
-            _view = view;
-            _view.DataContext = this;
+            View = view;
+            View.DataContext = this;
         }
+
+        public IView View { get; set; }
+
+       
     }
 }

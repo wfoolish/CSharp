@@ -1,30 +1,47 @@
 ﻿using BCDemo.Base;
 using BCDemo.IViewModels;
 using BCDemo.IViews;
+using BCDemo.ViewModels.Chapter1;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Unity;
 
 namespace BCDemo.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : ViewModelBase<IMainWindowView>, IMainWindowViewModel
     {
         public string Name { get; set; }
 
-        public MainWindowViewModel(IContentOneViewModel contentOneViewModel)
+        public MainWindowViewModel(IByteUpDownViewModel byteUpDownViewModel, IMainWindowView view) : base(view)
         {
-            this.Name = "dfadfd";
-            ContentOne = contentOneViewModel.View;
-            Btn_1_1_Cmd = new ActionCommand((obj) => { return true; }, null, (obj) => { MessageBox.Show("fadfad"); });
+            ByteUpDown = new ActionCommand((obj) => { return true; }, null,
+                (obj) =>
+                {
+                    ContentView = ((ViewModelBase<IByteUpDownView>)byteUpDownViewModel).View;
+                });
         }
 
-        public IView ContentOne { get; set; }
+        public IView ContentView
+        {
+            get { return _contentView; }
+            set
+            {
+                _contentView = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("ContentView"));
+            }
+        }
 
-        public ActionCommand Btn_1_1_Cmd { get; set; }
+        public ActionCommand ByteUpDown { get; set; }
+
+        #region var
+        private IView _contentView;
+        #endregion
     }
 }
