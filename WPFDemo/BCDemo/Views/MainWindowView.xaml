@@ -60,6 +60,9 @@
                                         <Button Command="{Binding MultiLineTextEditorCommand}">MultiLineTextEditor</Button>
                                         <Button Command="{Binding WindowContainerCommand}">WindowContainer</Button>
                                     </TreeViewItem>
+                                    <TreeViewItem Header="DevExpress">
+                                        <Button Command="{Binding DataGridCommand1}">DataGrid-1</Button>
+                                    </TreeViewItem>
                                 </TreeView>
                             </xcad:LayoutAnchorable>
                         </xcad:LayoutAnchorGroup>

@@ -35,8 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AduSkin, Version=1.1.1.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AduSkin.1.1.1.7\lib\net45\AduSkin.dll</HintPath>
+    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="HandyControl, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandyControls.2.5.3.1\lib\net45\HandyControl.dll</HintPath>
     </Reference>
     <Reference Include="Prism, Version=7.2.0.1422, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.7.2.0.1422\lib\net45\Prism.dll</HintPath>
@@ -51,6 +57,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -60,6 +67,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.7.2.0.1422\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -110,10 +118,12 @@
     <Compile Include="Base\IView.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="IViewModels\IByteUpDownViewModel.cs" />
+    <Compile Include="IViewModels\IDataGridViewModel.cs" />
     <Compile Include="IViewModels\IMainWindowViewModel.cs" />
     <Compile Include="IViewModels\IMultiLineTextEditorViewModel.cs" />
     <Compile Include="IViewModels\IWindowContainerViewModel.cs" />
     <Compile Include="IViews\IByteUpDownView.cs" />
+    <Compile Include="IViews\IDataGridView.cs" />
     <Compile Include="IViews\IMainWindowView.cs" />
     <Compile Include="IViews\IMultiLineTextEditorView.cs" />
     <Compile Include="IViews\IWindowContainerView.cs" />
@@ -121,6 +131,7 @@
     <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\MultiLineTextEditorViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\WindowContainerViewModel.cs" />
+    <Compile Include="ViewModels\DevExpress\DataGridViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Chapter1\ByteUpDownView.xaml.cs">
       <DependentUpon>ByteUpDownView.xaml</DependentUpon>
@@ -130,6 +141,9 @@
     </Compile>
     <Compile Include="Views\Chapter1\WindowContainerView.xaml.cs">
       <DependentUpon>WindowContainerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DexExpress\DataGridView.xaml.cs">
+      <DependentUpon>DataGridView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
@@ -173,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Chapter1\WindowContainerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DexExpress\DataGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

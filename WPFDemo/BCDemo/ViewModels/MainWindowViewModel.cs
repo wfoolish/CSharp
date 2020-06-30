@@ -41,6 +41,11 @@ namespace BCDemo.ViewModels
                 {
                     ContentView = ((ViewModelBase<IWindowContainerView>)windowContainerViewModel).View;
                 });
+            DataGridCommand1 = new ActionCommand((obj) => { return true; }, null,
+                (obj) =>
+                {
+                    ContentView = ((ViewModelBase<IWindowContainerView>)windowContainerViewModel).View;
+                });
         }
 
         public IView ContentView
@@ -57,6 +62,8 @@ namespace BCDemo.ViewModels
         public ActionCommand ByteUpDownCommand { get; set; }
         public ActionCommand MultiLineTextEditorCommand { get; set; }
         public ActionCommand WindowContainerCommand { get; set; }
+
+        public ActionCommand DataGridCommand1 { get; set; }
         #endregion
 
         #region var
