@@ -176,7 +176,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\XceedDemo\" />
+    <Folder Include="Views\XceedDemo\" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\Chapter1\ByteUpDownView.xaml">
       <SubType>Designer</SubType>

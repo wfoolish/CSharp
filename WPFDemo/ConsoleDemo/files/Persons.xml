@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Persons>
-	<Person Name="张三" Age="22" />
-	<Person Name="李四" Age="23" />
-	<Person Name="王五" Age="24" />
-</Persons>
