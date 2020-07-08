@@ -23,7 +23,8 @@ namespace BCDemo.ViewModels
 
         public MainWindowViewModel(IByteUpDownViewModel byteUpDownViewModel, IMainWindowView view,
             IMultiLineTextEditorViewModel multiLineTextEditorViewMoel,
-            IWindowContainerViewModel windowContainerViewModel) : base(view)
+            IWindowContainerViewModel windowContainerViewModel,
+            IDataTriggerViewModel dataTriggerViewModel) : base(view)
         {
             ByteUpDownCommand = new ActionCommand((obj) => { return true; }, null,
                 (obj) =>
@@ -46,6 +47,11 @@ namespace BCDemo.ViewModels
                 {
                     ContentView = ((ViewModelBase<IWindowContainerView>)windowContainerViewModel).View;
                 });
+            DataTriggerCommand = new ActionCommand((obj) => { return true; }, null,
+                (obj) =>
+                {
+                    ContentView = ((ViewModelBase<IDataTriggerView>)dataTriggerViewModel).View;
+                });
         }
 
         public IView ContentView
@@ -64,6 +70,8 @@ namespace BCDemo.ViewModels
         public ActionCommand WindowContainerCommand { get; set; }
 
         public ActionCommand DataGridCommand1 { get; set; }
+
+        public ActionCommand DataTriggerCommand { get; set; }
         #endregion
 
         #region var

@@ -63,6 +63,9 @@
                                     <TreeViewItem Header="DevExpress">
                                         <Button Command="{Binding DataGridCommand1}">DataGrid-1</Button>
                                     </TreeViewItem>
+                                    <TreeViewItem Header="WPFBase">
+                                        <Button Command="{Binding DataTriggerCommand}">DataTrigger</Button>
+                                    </TreeViewItem>
                                 </TreeView>
                             </xcad:LayoutAnchorable>
                         </xcad:LayoutAnchorGroup>

@@ -117,22 +117,30 @@
     <Compile Include="Base\ActionCommand.cs" />
     <Compile Include="Base\IView.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Entity\Person.cs" />
     <Compile Include="IViewModels\IByteUpDownViewModel.cs" />
     <Compile Include="IViewModels\IDataGridViewModel.cs" />
+    <Compile Include="IViewModels\IDataTriggerViewModel.cs" />
     <Compile Include="IViewModels\IMainWindowViewModel.cs" />
     <Compile Include="IViewModels\IMultiLineTextEditorViewModel.cs" />
     <Compile Include="IViewModels\IWindowContainerViewModel.cs" />
+    <Compile Include="IViewModels\WPFBase\IPersonViewModel.cs" />
     <Compile Include="IViews\IByteUpDownView.cs" />
     <Compile Include="IViews\IDataGridView.cs" />
+    <Compile Include="IViews\IDataTriggerView.cs" />
     <Compile Include="IViews\IMainWindowView.cs" />
     <Compile Include="IViews\IMultiLineTextEditorView.cs" />
     <Compile Include="IViews\IWindowContainerView.cs" />
+    <Compile Include="IViews\WPFBase\IPersonView.cs" />
     <Compile Include="Moudles\FirstMoudle.cs" />
+    <Compile Include="UserControls\PersonControl.cs" />
     <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\MultiLineTextEditorViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\WindowContainerViewModel.cs" />
     <Compile Include="ViewModels\DevExpress\DataGridViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\WPFBase\DataTriggerViewModel.cs" />
+    <Compile Include="ViewModels\WPFBase\PersonViewModel.cs" />
     <Compile Include="Views\Chapter1\ByteUpDownView.xaml.cs">
       <DependentUpon>ByteUpDownView.xaml</DependentUpon>
     </Compile>
@@ -147,6 +155,9 @@
     </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WPFBase\DataTriggerView.xaml.cs">
+      <DependentUpon>DataTriggerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WPFBase\DataTriggerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
