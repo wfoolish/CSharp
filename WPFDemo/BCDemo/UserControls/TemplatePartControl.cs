@@ -8,9 +8,9 @@ using System.Windows.Controls;
 
 namespace BCDemo.UserControls
 {
-    [TemplatePart(Name = "PART_Head", Type = typeof(ContentControl))]
-    [TemplatePart(Name = "PART_Body", Type = typeof(ContentControl))]
-    [TemplatePart(Name = "PART_Foot", Type = typeof(ContentControl))]
+    [TemplatePart(Name = "PART_Head", Type = typeof(StackPanel))]
+    [TemplatePart(Name = "PART_Body", Type = typeof(StackPanel))]
+    [TemplatePart(Name = "PART_Foot", Type = typeof(StackPanel))]
     public class TemplatePartControl : Control
     {
         public TemplatePartControl()
