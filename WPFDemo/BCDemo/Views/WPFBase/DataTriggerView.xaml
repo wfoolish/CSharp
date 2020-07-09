@@ -35,6 +35,18 @@
         </Grid.RowDefinitions>
         <ctl:PersonControl Grid.Row="0" DataContext="{Binding PersonOne}"></ctl:PersonControl>
         <ctl:PersonControl Grid.Row="1" DataContext="{Binding PersonTwo}"></ctl:PersonControl>
-        
+        <StackPanel Grid.Row="2">
+            <ctl:TemplatePartControl>
+                <ctl:TemplatePartControl.Template>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <StackPanel x:Name="PART_Head"></StackPanel>
+                            <StackPanel x:Name="PART_Body"></StackPanel>
+                            <StackPanel x:Name="PART_Foot"></StackPanel>
+                        </StackPanel>
+                    </ControlTemplate>
+                </ctl:TemplatePartControl.Template>
+            </ctl:TemplatePartControl>
+        </StackPanel>
     </Grid>
 </UserControl>

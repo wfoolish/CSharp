@@ -134,6 +134,7 @@
     <Compile Include="IViews\WPFBase\IPersonView.cs" />
     <Compile Include="Moudles\FirstMoudle.cs" />
     <Compile Include="UserControls\PersonControl.cs" />
+    <Compile Include="UserControls\TemplatePartControl.cs" />
     <Compile Include="ViewModels\Chapter1\ByteUpDownViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\MultiLineTextEditorViewModel.cs" />
     <Compile Include="ViewModels\Chapter1\WindowContainerViewModel.cs" />
