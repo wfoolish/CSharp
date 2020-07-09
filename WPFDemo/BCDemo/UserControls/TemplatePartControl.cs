@@ -8,6 +8,11 @@ using System.Windows.Controls;
 
 namespace BCDemo.UserControls
 {
+    /**
+     * TemplatePart使用场景：
+     * 1、在能确定使用到哪些属性时，尽量少用
+     * 2、在需要绑定事件时推荐使用
+     */
     [TemplatePart(Name = "PART_Head", Type = typeof(StackPanel))]
     [TemplatePart(Name = "PART_Body", Type = typeof(StackPanel))]
     [TemplatePart(Name = "PART_Foot", Type = typeof(StackPanel))]
