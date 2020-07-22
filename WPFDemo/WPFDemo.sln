@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCDemo", "BCDemo\BCDemo.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFBaseControlTemplateView", "WPFBaseControlTemplateView\WPFBaseControlTemplateView.csproj", "{1E67D581-85C0-4F58-B1A5-3AE1A54AA99A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDemo", "ConsoleDemo\ConsoleDemo.csproj", "{C410C258-9DA3-40E3-96FA-1C85E185ECA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{1E67D581-85C0-4F58-B1A5-3AE1A54AA99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E67D581-85C0-4F58-B1A5-3AE1A54AA99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E67D581-85C0-4F58-B1A5-3AE1A54AA99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C410C258-9DA3-40E3-96FA-1C85E185ECA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C410C258-9DA3-40E3-96FA-1C85E185ECA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C410C258-9DA3-40E3-96FA-1C85E185ECA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C410C258-9DA3-40E3-96FA-1C85E185ECA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
